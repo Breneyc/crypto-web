@@ -54,7 +54,7 @@
 </template>
 
 <script>
-import api from "@/services/api";  
+import api from "@/services/api";
 
 export default {
     data() {
@@ -104,13 +104,14 @@ export default {
             console.log("Ver detalles de:", item);
             this.$router.push({ name: 'CurrencyDetails', params: { id: item.id } });
         },
+
         async fetchCryptocurrencies() {
             try {
                 const response = await api.get('/CryptoCoinGeckoApi', {
                     params: {
                         vs_currency: 'usd',
                         order: 'market_cap_desc',
-                        per_page: 10, 
+                        per_page: 10,
                         page: 1,
                         sparkline: false,
                     }
@@ -123,7 +124,7 @@ export default {
                     market_cap: crypto.market_cap,
                     current_price: crypto.current_price,
                     market_cap_rank: crypto.market_cap_rank,
-                    favorite: false 
+                    favorite: false
                 }));
             } catch (error) {
                 console.error("Error al obtener las criptomonedas:", error);

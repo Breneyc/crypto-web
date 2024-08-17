@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "@/views/HomeView.vue";
-import DetailsCryptocurrencies from "@/views/DetailsCryptocurrencies.vue";
+// import DetailsCryptocurrencies from "@/views/DetailsCryptocurrencies.vue";
 
 const routes = [
   {
@@ -21,7 +21,7 @@ const routes = [
   {
     path: "/details/:id",
     name: "CurrencyDetails",
-    component: DetailsCryptocurrencies,
+    component: () => import("@/views/DetailsCryptocurrencies.vue"),
     props: true,
   },
 ];

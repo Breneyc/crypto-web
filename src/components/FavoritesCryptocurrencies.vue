@@ -16,7 +16,7 @@
                             <v-avatar size="48" class="mr-2"> <!-- Ajusta el tamaño aquí -->
                                 <img :src="item.urlImage" alt="Cryptocurrency Image" class="avatar-image">
                             </v-avatar>
-                            <span @click="currencyDetails(item)" class="clickable-text">
+                            <span @click="viewDetails(item)" class="clickable-text">
                                 <strong>{{ item.name }}</strong> {{ item.symbol }}
                             </span>
                         </td>
@@ -70,7 +70,8 @@ export default {
             }
         },
         viewDetails(item) {
-            this.$router.push({ name: 'CurrencyDetails', params: { id: item.id } });
+            console.log("Ver detalles de:", item);
+            this.$router.push({ name: 'CurrencyDetails', params: { id: item.name.toLowerCase() } });
         },
         async fetchCryptocurrencies() {
             try {

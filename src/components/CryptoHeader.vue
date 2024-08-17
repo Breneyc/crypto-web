@@ -5,7 +5,7 @@
                 <v-img :src="cryptoDetails.image?.large"></v-img>
             </v-avatar>
             <h1>{{ cryptoDetails.name }} ({{ cryptoDetails.symbol?.toUpperCase() }})</h1>
-            <span>#{{ cryptoDetails.market_data?.market_cap_rank }}</span>
+            <span>#{{ cryptoDetails.marketData?.marketCapRank }}</span>
         </v-col>
     </v-row>
     <v-row v-else>
